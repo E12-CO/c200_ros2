@@ -1,6 +1,6 @@
 # c200_ros2
 
-ROS2 node for Free-optics (FocusRay) C200 series LiDAR sensor.
+ROS2 node for Free-optics (FocusRay) C200 series Ethernet based LiDAR sensor.
 
 Build :
 -
@@ -12,3 +12,4 @@ Run :
 
 # TODO
 - Fix the 0 meter dot ghost data.
+- Only tested with a single C205 sensor, need to check other model (C206, C207)
