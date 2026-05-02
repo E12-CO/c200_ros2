@@ -56,7 +56,6 @@ class c200_if : public rclcpp::Node{
 	sensor_msgs::msg::LaserScan			msgLaser;
 	
 	// Used in wall timer callback
-	rclcpp::TimerBase::SharedPtr 	timerTcpLoop;
 	rclcpp::TimerBase::SharedPtr	timerFsmLoop;
 	
 	// Laser IP address
@@ -161,15 +160,7 @@ class c200_if : public rclcpp::Node{
 				rclcpp::QoS(rclcpp::SensorDataQoS())
 			);
 
-		// tcp loop timer
-		// timerTcpLoop =
-			// this->create_wall_timer(
-				// std::chrono::milliseconds(SERIAL_TIME_MIL),
-				// std::bind(
-					// &c200_if::c200_tcpRunner, 
-					// this)
-			// );
-			
+		// TCP listener thread
 		std::thread tRunner(
 			&c200_if::c200_tcpRunner, 
 			this
